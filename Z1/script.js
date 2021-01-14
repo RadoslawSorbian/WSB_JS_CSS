@@ -81,21 +81,59 @@ function validateNumber(number) {
     return valid;
 }
 
-function validateRadio(radio) {
-    // todo
-
-    return true;
-}
-
 function validatePassword(password) {
-    // regex do hasła: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-    // todo
+    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
 
-    return true;
+    const input = document.querySelector("input[name='password']");
+
+    if (valid) {
+        input.className = "";
+        const nameMessage = document.getElementById("password-input-message");
+        if (nameMessage) {
+            nameMessage.parentElement.removeChild(nameMessage);
+        }
+    } else {
+        input.className = "invalid";
+
+        if (!document.getElementById("password-input-message")) {
+            const small = document.createElement("small");
+            small.id = "password-input-message";
+            small.className = "invalid";
+            small.innerText = "\n\"Hasło\" powinno zawierać co najmniej 8 znaków, co najmniej 1 cyfrę, co najmniej 1 wielka literę i co najmniej 1 małą literę";
+
+            input.parentElement.appendChild(small);
+        }
+    }
+
+    return valid;
+
 }
 
 function validateRepeatedPassword(password, repeatedPassword) {
-    // todo
 
-    return true;
+    const input = document.querySelector("input[name='password2']");
+
+    if (repeatedPassword === password && repeatedPassword) {
+        input.className = "";
+        const nameMessage = document.getElementById("password2-input-message");
+        if (nameMessage) {
+            nameMessage.parentElement.removeChild(nameMessage);
+        }
+
+        return repeatedPassword;
+
+    } else {
+        input.className = "invalid";
+
+        if (!document.getElementById("password2-input-message")) {
+            const small = document.createElement("small");
+            small.id = "password2-input-message";
+            small.className = "invalid";
+            small.innerText = "\nPole \"Powtórz hasło\" powinno mieć taką samą wartość jak pole \"Hasło\"";
+
+            input.parentElement.appendChild(small);
+        }
+    }
+
+
 }
