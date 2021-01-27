@@ -12,14 +12,13 @@ function findStats() {
     const StatsDiv = document.getElementById("Stats");
 
 
-    Stats.innerHTML = "";
+    StatsDiv.innerHTML= "";
 
     axios.get(`http://ergast.com/api/f1/${season}/${round}`).then(response => {
         console.log(response);
-
-        const Stats = createStatsDiv(response.data);
-
+        const Stats = createStatsDiv(response.request.responseURL);
         StatsDiv.append(Stats);
 
     })
+
 }
