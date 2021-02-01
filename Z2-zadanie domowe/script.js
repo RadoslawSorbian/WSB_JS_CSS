@@ -11,10 +11,16 @@ function findStats() {
 
     const StatsDiv = document.getElementById("Stats");
     const StatsDiv2 = document.getElementById("Stats2");
+    const StatsDiv3 = document.getElementById("Stats3");
+    const StatsDiv4 = document.getElementById("Stats4");
+    const StatsDiv5 = document.getElementById("Stats5");
 
 
     StatsDiv.innerHTML= "";
     StatsDiv2.innerHTML= "";
+    StatsDiv3.innerHTML= "";
+    StatsDiv4.innerHTML= "";
+    StatsDiv5.innerHTML= "";
 
     axios.get(`http://ergast.com/api/f1/${season}/${round}`).then(response => {
         console.log(response);
@@ -29,9 +35,9 @@ function findStats() {
 
         StatsDiv.append(xml.getElementsByTagName("RaceName")[0].textContent);
         StatsDiv2.append(xml.getElementsByTagName("CircuitName")[0].textContent);
-        //StatsDiv.append(xml.getElementsByTagName("Locality")[0].textContent);
-        //StatsDiv.append(xml.getElementsByTagName("Country")[0].textContent);
-        //StatsDiv.append(xml.getElementsByTagName("Date")[0].textContent);
+        StatsDiv3.append(xml.getElementsByTagName("Locality")[0].textContent);
+        StatsDiv4.append(xml.getElementsByTagName("Country")[0].textContent);
+        StatsDiv5.append(xml.getElementsByTagName("Date")[0].textContent);
     })
 
 }

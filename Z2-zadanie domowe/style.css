@@ -2,17 +2,10 @@
     color: blue;
 }
 #lbl2{
-    color:yellow;
+    color:blueviolet;
 }
-.col-sm-8{
-    background-color: brown;
-}
+
+
 #Stats{
     font-size: 24px;
-}
-#Stats2{
-    font-family: sans-serif;
-    font-color: #ff0000;
-    font-size: 24px;
-
 }
