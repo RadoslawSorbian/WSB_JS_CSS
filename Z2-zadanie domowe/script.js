@@ -25,9 +25,11 @@ function findStats() {
         console.log(xml.getElementsByTagName("Country")[0].textContent);
         console.log(xml.getElementsByTagName("Date")[0].textContent);
 
-        const Stats = createStatsDiv(response.data);
-        StatsDiv.append(Stats);
-
+        StatsDiv.append(xml.getElementsByTagName("RaceName")[0].textContent);
+        StatsDiv.append(xml.getElementsByTagName("CircuitName")[0].textContent);
+        StatsDiv.append(xml.getElementsByTagName("Locality")[0].textContent);
+        StatsDiv.append(xml.getElementsByTagName("Country")[0].textContent);
+        StatsDiv.append(xml.getElementsByTagName("Date")[0].textContent);
     })
 
 }
