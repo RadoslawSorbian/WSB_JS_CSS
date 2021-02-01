@@ -15,7 +15,6 @@ function findStats() {
     const StatsDiv4 = document.getElementById("Stats4");
     const StatsDiv5 = document.getElementById("Stats5");
 
-
     StatsDiv.innerHTML= "";
     StatsDiv2.innerHTML= "";
     StatsDiv3.innerHTML= "";
