@@ -16,7 +16,16 @@ function findStats() {
 
     axios.get(`http://ergast.com/api/f1/${season}/${round}`).then(response => {
         console.log(response);
-        const Stats = createStatsDiv(response.request.responseURL);
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(response.data, "text/xml")
+        console.log(xml.getElementsByTagName("RaceName")[0].textContent);
+        console.log(xml.getElementsByTagName("CircuitName")[0].textContent);
+        console.log(xml.getElementsByTagName("Locality")[0].textContent);
+        console.log(xml.getElementsByTagName("Country")[0].textContent);
+        console.log(xml.getElementsByTagName("Date")[0].textContent);
+
+        const Stats = createStatsDiv(response.data);
         StatsDiv.append(Stats);
 
     })
