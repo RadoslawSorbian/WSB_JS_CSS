@@ -1,11 +1,17 @@
-#lbl1{
+#lbl1,#lbl2 {
     color: blue;
-}
-#lbl2{
-    color:blueviolet;
+    font-size: large;
+    font-weight: bold;
 }
 
-
-#Stats{
-    font-size: 24px;
+#st1,#st2,#st3,#st4,#st5 {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: darkred;
+}
+#Stats,#Stats2,#Stats3,#Stats4,#Stats5{
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: darkorange;
 }
